@@ -1,0 +1,64 @@
+body {
+  background-color: black;
+  color: #4af626;
+  font-family: monospace;
+  font-size: 20px;
+}
+
+#input {
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+
+#terminal {
+  position: relative;
+  display: inline-block;
+  line-height: 20px;
+  font-size: 20px;
+}
+#cursor {
+  content: '';
+  position: absolute;
+  /* top: 0; */
+  /* left: 10px; */
+  /* Remove display: inline-block if not required to be on the same line as text etc */
+  display: inline-block;
+  background-color: #4af626;
+  vertical-align: top;
+  width: 12px;
+  /* Set height to the line height of .text */
+  height: 20px;
+  /* 
+  Animation paramaters:
+  blink = animation-name, 
+  1s = animation-duration, 
+  step-end = animation-timing-function,
+  infinite = animation-iteration-count
+  */
+  -webkit-animation: blink 1s step-end infinite;
+  animation: blink 1s step-end infinite;
+}
+
+@-webkit-keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
