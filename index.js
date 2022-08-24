@@ -16,6 +16,7 @@ document.getElementById('input').addEventListener('keyup', (e) => {
     e.target.value = ''
     updateTerminalInput('')
     debug(e)
+    window.scrollTo(0, document.body.scrollHeight)
   }
 })
 
@@ -33,12 +34,14 @@ function command(cmd) {
     terminalContent.push('drwxr-xr-x 31 nake89 nake89 4096 23. 8. 21:56 .')
     terminalContent.push('drwx------ 38 nake89 nake89 4096 23. 8. 22:17 ..')
     terminalContent.push(
-      '-rw-r--r--  1 nake89 nake89       431 11. 8. 11:44  about.txt'
+      '-rw-r--r--   1 nake89 nake89       431 11. 8. 11:44  about.txt'
     )
     terminalContent.push(
-      '-rw-r--r--  1 nake89 nake89       763 14. 8. 13:37  intro.txt'
+      '-rw-r--r--   1 nake89 nake89       763 14. 8. 13:37  intro.txt'
     )
     terminalContent.push('drwxr-xr-x 10 nake89 nake89 4096  23. 8. 15:10 posts')
+  } else {
+    terminalContent.push('command not found: ' + cmd)
   }
 }
 
