@@ -17,11 +17,14 @@ e = 5
 echo "Whaddup, dawg " + i
 echo "vegan cheese"
 echo e + 2
+echo i
+echo a + i
 
 `
 
 let vars = {}
 const ast = generateAST(code)
+console.log(JSON.stringify(ast,null,2))
 interpret(ast)
 
 function interpret(ast) {
@@ -54,6 +57,8 @@ function interpret(ast) {
           let flat = flattenBinaryExpression(arguments)
           let calc = calculateFlattenedExpression(flat)
           console.log(calc)
+        } else if (arguments.type === 'Identifier') {
+          console.log(vars[arguments.value])
         }
       }
     }
